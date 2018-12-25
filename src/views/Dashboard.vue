@@ -46,23 +46,33 @@
 </template>
 
 <script>
-  export default {
-    data() {
-      return {
-        projects: [
-          { title: 'Design a new website', person: 'Panth', due: '1st Jan, 2019', status: 'ongoing', content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex delectus tempore soluta deleniti doloremque aliquam repellat eos hic voluptatem ullam. Pariatur harum architecto consequuntur accusantium odio commodi fugiat quibusdam in.'},
-          { title: 'Algo a new website', person: 'Solanki', due: '12st Jan, 2019', status: 'completed', content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia libero porro beatae. In, similique iste perspiciatis quis facere libero mollitia assumenda explicabo molestiae quae ratione officia temporibus quidem commodi iusto.'},
-          { title: 'Sethew a new website', person: 'abc', due: '11st Jan, 2019', status: 'ongoing', content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente ab doloribus, quasi voluptatibus illo commodi minima impedit at repudiandae corrupti, deleniti officiis ipsa quisquam in inventore voluptates, excepturi tenetur ex?'},
-          { title: 'Design a new website', person: 'xyz', due: '16st Jan, 2019', status: 'overdue', content: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit accusamus dignissimos nam, fugiat placeat odit beatae eligendi, praesentium a explicabo suscipit omnis voluptate dolores sint facilis, modi voluptatibus ipsum molestias?'}
-        ]
-      }
-    },
-    methods: {
-      sortBy(type){
-        this.projects.sort((a,b) => a[type] < b[type] ? -1 : 1)
-      }
+import db from  '@/fb'
+export default {
+  data() {
+    return {
+      projects: []
     }
+  },
+  methods: {
+    sortBy(type){
+      this.projects.sort((a,b) => a[type] < b[type] ? -1 : 1)
+    }
+  },
+  created() {
+    db.collection('projects').onSnapshot(res => {
+      const changes = res.docChanges();
+
+      changes.forEach(change => {
+        if (change.type === 'added'){
+          this.projects.push({
+            ...change.doc.data(),
+            id: change.doc.id
+          })
+        }
+      })
+    })
   }
+}
 </script>
 
 <style>
