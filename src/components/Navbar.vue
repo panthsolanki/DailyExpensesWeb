@@ -19,7 +19,7 @@
 					<v-avatar size="100">
 						<img src="/avatar-2.png" alt="">
 					</v-avatar>
-					<p center class="white--text subheading mt-1">Panth</p>
+					<p center class="white--text subheading mt-1">Panth Solanki</p>
 				</v-flex>
 			</v-layout>
 			<v-list>
