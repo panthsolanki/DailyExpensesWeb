@@ -32,10 +32,10 @@
     data() {
       return {
         team: [
-          { name: 'ABC', role: 'Web developer', avatar: '/avatar-1.png'},
-          { name: 'adva', role: 'Graphic designer', avatar: '/avatar-2.png'},
-          { name: 'mnas', role: 'Web developer', avatar: '/avatar-3.png'},
-          { name: 'XYS', role: 'Sales guru', avatar:'/avatar-4.png'},
+          { name: 'Solanki', role: 'Web developer', avatar: '/avatar-1.png'},
+          { name: 'Panth', role: 'Graphic designer', avatar: '/avatar-2.png'},
+          { name: 'Someone', role: 'Web developer', avatar: '/avatar-3.png'},
+          { name: 'otherone', role: 'Sales guru', avatar:'/avatar-4.png'},
         ]
       }
     }
