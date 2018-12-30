@@ -67,6 +67,7 @@ export default {
         { icon: 'folder', text: 'My Projects', route:'/projects'},
 				{ icon: 'person', text: 'Team', route:'/team'},
 				{ icon: 'attach_money', text: 'Add Expense', route:'/add'},
+				{ icon: 'format_list_bulleted', text: 'List Expense', route:'/list'},
       ],
       snackbar: false
     }

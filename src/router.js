@@ -4,6 +4,7 @@ import Dashboard from './views/Dashboard.vue'
 import Projects from './views/Projects.vue'
 import Team from './views/Team.vue'
 import AddExpense from './views/AddExpense.vue'
+import ListExpense from './views/ListExpense.vue'
 
 Vue.use(Router)
 
@@ -30,6 +31,11 @@ export default new Router({
       path: '/add',
       name: 'addExpense',
       component: AddExpense
+    },
+    {
+      path: '/list',
+      name: 'listExpense',
+      component: ListExpense
     }
   ]
 })
