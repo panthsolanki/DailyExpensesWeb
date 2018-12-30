@@ -64,14 +64,13 @@ export default {
 
 				const expense = {
 					month: this.month,	
-					today: this.today,
+					date: this.today,
 					type: this.type,
 					subtype: this.subtype,
 					title: this.title,
 					amount: this.amount,
 					reimbursable: true,
 				}
-				console.log(expense);
 				db.collection('expenses').add(expense).then(() => {
 					this.loading = false
 					this.dialog = false
