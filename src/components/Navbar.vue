@@ -65,7 +65,8 @@ export default {
       links: [
         { icon: 'dashboard', text: 'Dashboard', route:'/'},
         { icon: 'folder', text: 'My Projects', route:'/projects'},
-        { icon: 'person', text: 'Team', route:'/team'},
+				{ icon: 'person', text: 'Team', route:'/team'},
+				{ icon: 'attach_money', text: 'Add Expense', route:'/add'},
       ],
       snackbar: false
     }
