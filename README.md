@@ -1,4 +1,5 @@
 # DailyExpensesWeb
+Site is under development, but you are always welcome to observer the changes [Visit Here](https://panthsolanki.github.io/DailyExpensesWeb/)
 
 ## Project setup
 ```
