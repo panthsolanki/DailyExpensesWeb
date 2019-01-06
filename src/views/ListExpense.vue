@@ -4,7 +4,7 @@
     <v-container class="my-5">
       <v-expansion-panel>
         <v-expansion-panel-content v-for="expense in myexpenses" :key="expense.id">
-          <div slot="header">{{expense.today}}</div>
+          <div slot="header">{{expense.date}}</div>
         <v-card>
           <v-card-text class="px-4 grey--text">
             <div class="font-weight-bold">due by {{expense.title}}</div>
