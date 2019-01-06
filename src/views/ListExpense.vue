@@ -19,6 +19,7 @@
 
 <script>
 import db from '@/fb'
+import _ from 'lodash';
 export default {
   data() {
     return{
@@ -54,6 +55,7 @@ export default {
     }
   },
   created() {
+    console.log(_.isEmpty() ? 'Lodash is available here!' : 'Uh oh..');
     db.collection('expenses').onSnapshot(res => {
       const changes = res.docChanges();
 
