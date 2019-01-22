@@ -32,8 +32,8 @@
 		<v-navigation-drawer app v-model="drawer" class="primary">
 			<v-layout column align-center>
 				<v-flex class="mt-5">
-					<v-avatar size="100">
-						<img src="/avatar-2.png" alt="">
+					<v-avatar color="black" size="100">
+						<img src="/panth.png" alt="">
 					</v-avatar>
 					<p center class="white--text subheading mt-1">Panth Solanki</p>
 				</v-flex>
@@ -63,9 +63,9 @@ export default {
     return {
       drawer: false,
       links: [
-        { icon: 'dashboard', text: 'Dashboard', route:'/'},
-        { icon: 'folder', text: 'My Projects', route:'/projects'},
-				{ icon: 'person', text: 'Team', route:'/team'},
+        // { icon: 'dashboard', text: 'Dashboard', route:'/'},
+        // { icon: 'folder', text: 'My Projects', route:'/projects'},
+				// { icon: 'person', text: 'Team', route:'/team'},
 				{ icon: 'attach_money', text: 'Add Expense', route:'/add'},
 				{ icon: 'format_list_bulleted', text: 'List Expense', route:'/list'},
       ],
