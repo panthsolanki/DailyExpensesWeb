@@ -1,6 +1,7 @@
 <template>
   <div class="dashboard">
-    <h1 class="subheading grey--text">Dashboard</h1>
+    <ListExpense/>
+    <!-- <h1 class="subheading grey- -text">Dashboard</h1>
     <v-container class="my-5">
       <v-layout row class="mb-3">
         <v-tooltip top>
@@ -41,13 +42,16 @@
         </v-layout>
         <v-divider></v-divider>
       </v-card>
-    </v-container>
+    </v-container> -->
   </div>
 </template>
 
 <script>
 import db from  '@/fb'
+import ListExpense from './ListExpense'
+
 export default {
+  components: { ListExpense },
   data() {
     return {
       projects: []
