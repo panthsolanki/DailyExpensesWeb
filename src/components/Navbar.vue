@@ -1,9 +1,9 @@
 <template>
 	<nav>
-    <v-snackbar v-model="snackbar" :timeout="3000" top color="success">
+    <!-- <v-snackbar v-model="snackbar" :timeout="3000" top color="success">
       <span>Awsome! You added a new project.</span>
       <v-btn flat color="white" @click="snackbar = false"> Close</v-btn>
-    </v-snackbar>
+    </v-snackbar> -->
 
 		<v-toolbar flat app>
 			<v-toolbar-side-icon class="grey--text" @click="drawer = !drawer"></v-toolbar-side-icon>
@@ -37,9 +37,9 @@
 					</v-avatar>
 					<p center class="white--text subheading mt-1">Panth Solanki</p>
 				</v-flex>
-        <v-flex class="mt-4 mb-3">
+        <!-- <v-flex class="mt-4 mb-3">
           <Popup @projectAdded="snackbar = true"/>
-        </v-flex>
+        </v-flex> -->
 			</v-layout>
 			<v-list>
 				<v-list-tile v-for="link in links" :key="link.text" router :to="link.route">
@@ -56,9 +56,9 @@
 </template>
 
 <script>
-import Popup from './Popup'
+// import Popup from './Popup'
 export default {
-  components: { Popup },
+  // components: { Popup },
   data() {
     return {
       drawer: false,
