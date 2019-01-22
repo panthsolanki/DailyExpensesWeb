@@ -14,8 +14,8 @@
       <v-spacer></v-spacer>
       <v-menu offset-y>
         <v-btn flat slot="activator" color="grey">
-          <v-icon left>expand_more</v-icon>
           <span>Menu</span>
+          <v-icon right>expand_more</v-icon>
         </v-btn>
         <v-list>
           <v-list-tile v-for="link in links" :key="link" router :to="link.route">
@@ -33,9 +33,9 @@
 			<v-layout column align-center>
 				<v-flex class="mt-5">
 					<v-avatar color="black" size="100">
-						<img src="/panth.png" alt="">
+						<img src="/panth.png" alt="logo" style="border: 1px solid black;">
 					</v-avatar>
-					<p center class="white--text subheading mt-1">Panth Solanki</p>
+					<p center class="white--text subheading mt-1 mb-5">Panth Solanki</p>
 				</v-flex>
         <!-- <v-flex class="mt-4 mb-3">
           <Popup @projectAdded="snackbar = true"/>
