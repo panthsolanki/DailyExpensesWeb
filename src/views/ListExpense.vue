@@ -2,9 +2,12 @@
   <div class="expenses">
     <h1 class="subheading grey--text">Expenses</h1>
     <v-container class="my-5">
-      <v-expansion-panel v-for="ed in myexpenses" :key="ed.id">
-        <v-expansion-panel-content>
-          <div slot="header">{{ed.details[0].date}} 
+      <v-expansion-panel>
+        <v-expansion-panel-content v-for="ed in myexpenses" :key="ed.id">
+          <div slot="header" >
+            <div class="left">
+              <div class="expansion-panel-title">{{ed.details[0].date}}</div>
+            </div>
             <div class="right">
               <v-chip small class="total white--text caption my-1">{{ed.totalamount}}</v-chip>
             </div>
@@ -30,7 +33,6 @@
                 </v-flex>
               </v-layout>
             </v-card-text>
-            <v-divider></v-divider>
           </v-card>
         </v-expansion-panel-content>
       </v-expansion-panel>
@@ -40,7 +42,7 @@
 
 <script>
 import db from '@/fb'
-import _ from 'lodash';
+// import _ from 'lodash';
 export default {
   data() {
     return{
@@ -93,13 +95,17 @@ export default {
     }
   },
   created() {
-    console.log(_.isEmpty() ? 'Lodash is available here!' : 'Uh oh..');
+    // console.log(_.isEmpty() ? 'Lodash is available here!' : 'Uh oh..');
     this.getData()
   }
 }
 </script>
 
 <style>
+  .expansion-panel-title{
+    line-height:32px;
+    font-size:18px;
+  }
   .project.food{
     border-left: 4px solid #3cd1c2;
   }
