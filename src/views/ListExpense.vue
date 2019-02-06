@@ -1,7 +1,38 @@
 <template>
   <div class="expenses">
     <h1 class="subheading grey--text">Expenses</h1>
+    <!-- <v-overflow-btn :items="months" label="Filter month" editable ></v-overflow-btn> -->
     <v-container class="my-5">
+      <v-layout row class="mb-3">
+        <v-tooltip top xs12 lg4>
+          <!-- <v-overflow-btn :items="months" label="Filter month" editable slot="activator"></v-overflow-btn> -->
+          <v-autocomplete
+            v-model="model"
+            :items="months"
+            label="filter by month"
+            prepend-icon="mdi-city"
+            slot="activator"
+            persistent-hint>
+          </v-autocomplete>
+          <span>Filter by month</span>
+        </v-tooltip>
+        
+        
+        <v-tooltip top xs12 lg4>
+          <v-btn small flat color="grey" @click="sortBy('title')" slot="activator">
+            <v-icon left small>folder</v-icon>
+            <span class="caption text-lowercase">by project title</span>
+          </v-btn>
+          <span>Sort project by Project Title</span>
+        </v-tooltip>
+        <v-tooltip top xs12 lg4>
+        <v-btn small flat color="grey" @click="sortBy('person')" slot="activator">
+          <v-icon left small>person</v-icon>
+          <span class="caption text-lowercase">by person</span>
+        </v-btn>
+        <span>Sort project by Person</span>
+        </v-tooltip>
+      </v-layout>
       <v-expansion-panel>
         <v-expansion-panel-content v-for="ed in myexpenses" :key="ed.id">
           <div slot="header" >
@@ -42,13 +73,15 @@
 
 <script>
 import db from '@/fb'
-// import _ from 'lodash';
+import _ from 'lodash';
 export default {
   data() {
     return{
       projects: [],
       expenses: [],
       dates: [],
+      months:[],
+      isEditing: true,
       expensesDatewise: {}
     }
   },
@@ -82,6 +115,12 @@ export default {
           }
         })
       })
+    },
+    getMonths(){
+      var ma = _.map(this.expenses, (expense)=>{
+        return expense.month;
+      })
+      this.months = _.uniq(ma);
     }
   },
   computed: {
@@ -91,6 +130,7 @@ export default {
       })
     },
     myexpenses() {
+      this.getMonths()
       return this.calmyexpenses()
     }
   },
